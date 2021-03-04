@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+int main()
+{
+	int a[5][5];
+	for (int i = 0; i < 5; ++i)
+	{
+		for (int j = 0; j < 5; ++j)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+
+	for (int i = 0; i < 5; ++i)
+	{
+		for (int j = i; j < 5; ++j)
+		{
+			int temp = a[i][j];
+			a[i][j] = a[j][i];
+			a[j][i] = temp;
+		}
+	}
+
+	for (int i = 0; i < 5; ++i)
+	{
+		for (int j = 0; j < 5; ++j)
+		{
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
